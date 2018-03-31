@@ -1555,6 +1555,9 @@
     <ClCompile Include="..\..\src\preferences\lobby.cpp">
       <Filter>Preferences</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\ogl\texture.cpp">
+      <Filter>OGL</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\addon\client.hpp">
@@ -3015,6 +3018,12 @@
     </ClInclude>
     <ClInclude Include="..\..\src\preferences\lobby.hpp">
       <Filter>Preferences</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\map\hex_rect.hpp">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\ogl\texture.hpp">
+      <Filter>OGL</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
