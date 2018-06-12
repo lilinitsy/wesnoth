@@ -1,47 +1,26 @@
-## Version 1.14.3+dev
- ### Campaigns
-   * Eastern Invasion:
-     * Fixed missing prisoners and loss of recallable units in 'Captured'.
- ### User interface
-   * Improved the layout of the Statistics dialog.
- ### Graphics
-   * Tweaked the Ruffian's attack animation timing.
-   * New attack animation for the Peasant.
- ### Miscellaneous and bug fixes
-   * Added an advanced preference to enable experimental PRNG combat.
-   * Fixed MP admins being unable to observe private games.
-
-## Version 1.14.3
+## Version 1.14.2+dev
  ### AI
    * Fixed crash in presence of units with negative hitpoints (issue #3042).
    * Efficiency improvements to filter evaluations in the Goto Micro AI and some
      AI helper functions
  ### Campaigns
-   * Dead Water:
+   * Dead Water
      * Fix possibility of villagers blocking pickup of sword in S10 The Flaming
-       Sword (issue #3207).
-   * Descent Into Darkness:
-     * New Parthyn map in S1 and S6.
+       Sword. (Bug # 3207)
    * Northern Rebirth:
      * Reduced starting gold and income in scenarios 10 to 13
    * Secrets of the Ancients:
-     * Fix S09 Training Session not ending when all dark adepts die (issue #3192)
+     * Fix S09 Training Session not ending when all dark adepts die (Bug #3192)
    * Tutorial:
      * S2: made enemy starting gold equal to that of the player.
-   * Under the Burning Suns:
-     * Added portrait and updated sprite for Giant Ant.
  ### Language and i18n
-   * Updated translations: British English, Chinese (Traditional), Czech, French,
-     Italian, Japanese, Scottish Gaelic, Spanish
+   * Updated translations: British English, Chinese (Traditional), French, Italian
  ### Multiplayer server
    * Fixed lan_server option not causing the server to exit once vacated, e.g.
      when using the Host Networked Game option from the Multiplayer menu in the
      game (issue #3206).
  ### Music and sound effects
    * The music now changes immediately when you load a save file (issue #2602).
-   * Fixed Lua errors when setting a music track that cannot be found when the
-     playlist is already empty, e.g. if there's no music installed for the
-     game (issue #3194).
  ### WML engine
    * Removed validation to ensure units cannot have negative hitpoints. We
      learned that the ability to create such units is documented, and thus
@@ -53,14 +32,9 @@
    * [kill] animate=yes no longer scrolls to units through fog or shroud, thus
      matching 1.12's behavior again.
    * [message] displays the unit type name when a nameless unit speaks and no
-     custom caption= is specified (issue #3211).
+     custom caption= is specified (fixes #3211).
    * do_not_list=yes units are no longer excluded from the debug mode-only
      Create Unit dialog.
-   * Fixed a rare issue where disabled attacks could cause the wrong attack to
-     be initially selected in the Unit Attack dialog. This bug also had the
-     potential to cause units to the wrong attack when  engaging or viewing
-     damage calculations.
-   * Fixed [scenario] map_file= being unusable in most circumstances.
 
 ## Version 1.14.2
  ### Campaigns

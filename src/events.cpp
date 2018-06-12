@@ -25,7 +25,6 @@
 #endif
 
 #include <algorithm>
-#include <atomic>
 #include <cassert>
 #include <deque>
 #include <iterator>
@@ -45,17 +44,16 @@ struct invoked_function_data
 {
 	explicit invoked_function_data(const std::function<void(void)>& func)
 		: f(func)
-		, finished()
+		, finished(false)
 		, thrown_exception()
 	{
-		finished = false;
 	}
 
 	/** The actual function to call. */
 	const std::function<void(void)>& f;
 
 	/** Whether execution in the main thread is complete. */
-	std::atomic_bool finished;
+	bool finished = false;
 
 	/** Stores any exception thrown during the execution of @ref f. */
 	std::exception_ptr thrown_exception;

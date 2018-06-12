@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Battle for Wesnoth 1.14\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2018-06-03 16:42+0300\n"
-"PO-Revision-Date: 2018-06-12 21:19+0200\n"
+"PO-Revision-Date: 2018-06-03 21:13+0200\n"
 "Last-Translator: Aaron Winter <winter.aaron93@gmail.com>\n"
 "Language-Team: irc://irc.freenode.net/#wesnoth-de\n"
 "Language: de_DE\n"
@@ -1956,7 +1956,7 @@ msgstr ""
 #. [settings]
 #: data/gui/default.cfg:23
 msgid " (Press '$hotkey' for more information)"
-msgstr " (Drückt »$hotkey« für mehr Informationen)"
+msgstr " (Drücke '$hotkey' für mehr Informationen)"
 
 #: data/gui/macros/_initial.cfg:338
 msgid "Search"
@@ -2449,12 +2449,12 @@ msgstr "Sortieren nach:"
 #. [toggle_button]: id=sort_name
 #: data/gui/window/campaign_dialog.cfg:227
 msgid "Sort by full campaign name in alphabetical order"
-msgstr "Sortiert nach Kampagnennamen in alphabetischer Reihenfolge"
+msgstr "Sortiere nach vollen Kampagnennamen in alphabetischer Reihenfolge"
 
 #. [toggle_button]: id=sort_time
 #: data/gui/window/campaign_dialog.cfg:239
 msgid "Dates"
-msgstr "Jahreszahl"
+msgstr "Datum"
 
 #. [toggle_button]: id=sort_time
 #: data/gui/window/campaign_dialog.cfg:240
@@ -2469,17 +2469,17 @@ msgstr "Modifikationen"
 
 #. [toggle_button]: id=checkbox_deterministic
 #: data/gui/window/campaign_dialog.cfg:409
+#, fuzzy
+#| msgid "Save Game"
 msgid "Save random seed"
-msgstr "Speichere Startwert des Zufallsgenerators"
+msgstr "Spiel speichern"
 
 #. [toggle_button]: id=checkbox_deterministic
 #: data/gui/window/campaign_dialog.cfg:411
 msgid ""
 "Makes the random number generator yield the same results even after "
 "reloading a game"
-msgstr ""
-"Der Zufallszahlengenerator erzeugt auch nach erneutem Laden des Spiels die "
-"gleichen Ergebnisse"
+msgstr "Zufällig generierte Zahlen bleiben auch nach einem Neustart die selben"
 
 #. [label]: id=title
 #. [slider]: id=enemey_gold_factor
@@ -4173,7 +4173,7 @@ msgid ""
 "The server will run as a background process until all users have "
 "disconnected. Do you wish to continue?"
 msgstr ""
-"Es muss eine lokale Serverinstanz gestartet werden, um ein Netzwerkspiel "
+"Es muss eine lokale Serverinstanz gestatet werden, um ein Netzwerkspiel "
 "auszurichten. Der Server läuft im Hintergrund bis sich alle Spieler "
 "abgemeldet habe. Möchtet Ihr fortfahren?"
 
@@ -4465,9 +4465,7 @@ msgstr "Automatische Spielstände bei Szenarioende löschen"
 #: data/gui/window/preferences/01_general.cfg:191
 msgid ""
 "Delete previous auto-saves on victory in all modes and defeat in multiplayer"
-msgstr ""
-"Automatische Spielstände bei Sieg löschen, im Mehrspielermodus auch bei "
-"Niederlage."
+msgstr "Automatische Spielstände nach ES/MS Sieg oder MS Niederlage löschen"
 
 #. [column]
 #: data/gui/window/preferences/01_general.cfg:201
@@ -4851,8 +4849,8 @@ msgid ""
 "Add this username to your friends list (add optional notes, e.g., "
 "'player_name notes on friend')"
 msgstr ""
-"Fügt den Benutzer zu Eurer Freundesliste hinzu (optionalen mit Anmerkungen, "
-"bsp. »Spielername Notiz«)"
+"Fügt den Benutzer zu Eurer Freundesliste hinzu (mit optionalen Anmerkungen, "
+"bsp. 'spieler_name Freundesnotiz')"
 
 #. [button]: id=add_ignored
 #: data/gui/window/preferences/05_multiplayer.cfg:277
@@ -4860,8 +4858,8 @@ msgid ""
 "Add this username to your ignore list (add optional reason, e.g., "
 "'player_name reason ignored')"
 msgstr ""
-"Fügt den Benutzer zu Eurer Sperrliste hinzu (optional mit Anmerkungen. "
-"Beispiel: »Spielername Begründung«)"
+"Fügt den Benutzer zu Eurer Sperrliste hinzu (mit optionalen Anmerkungen. "
+"Beispiel: 'spieler_name Begründung')"
 
 #. [button]: id=remove
 #: data/gui/window/preferences/05_multiplayer.cfg:290
@@ -5924,7 +5922,6 @@ msgstr "Version $version"
 msgid "Running on $os"
 msgstr "Läuft unter $os"
 
-# Ein Strich passt hier besser.
 #: src/gui/dialogs/game_version.cpp:226
 msgid "version^N/A"
 msgstr "-"
@@ -6131,8 +6128,9 @@ msgid ""
 "Something is wrong with the addon version check database supporting the "
 "multiplayer lobby. Please report this at http://bugs.wesnoth.org."
 msgstr ""
-"Etwas ist schiefgegangen beim Abgleich mit dem Server für Erweiterungen. "
-"Bitte meldet dies hier: https://bugs.wesnoth.org."
+"Etwas stimmt nicht mit der Version der Erweiterung, überprüfe Datenbank "
+"welche die Multiplayer Lobby unterstützt. Bitte melden Sie dies hier: "
+"https://bugs.wesnoth.org."
 
 #: src/gui/dialogs/multiplayer/mp_alerts_options.cpp:131
 msgid ""
@@ -6284,9 +6282,9 @@ msgid ""
 "“<b>$hotkey_sequence|</b>” is in use by “<b>$old_hotkey_action|</b>”.\n"
 "Do you wish to reassign it to “<b>$new_hotkey_action|</b>”?"
 msgstr ""
-"»<b>$hotkey_sequence|</b>« wird bereits von »<b>$old_hotkey_action|</b>« "
-"verwendet.\n"
-"Möchtet Ihr diese Kombination »<b>$new_hotkey_action|</b>« zuweisen?"
+"“<b>$hotkey_sequence|</b>” wird bereits von “<b>$old_hotkey_action|</b>” "
+"verwendet. Möchtet Ihr diese Kombination “<b>$new_hotkey_action|</b>\" "
+"zuweisen?"
 
 #: src/gui/dialogs/preferences_dialog.cpp:880
 msgid "Reassign Hotkey"
@@ -6350,12 +6348,10 @@ msgstr "Test wählen"
 msgid "This unit is loyal and requires no upkeep."
 msgstr "Diese Einheit ist loyal und kosten euch keine Unterhaltskosten."
 
-# Der vorhergehende Satz sagt etwas übder die Einheit, darauf bezieht sich dieser Satz. Ich halte es daher für besser him mit sie zu übersetzen.
-# --Sevu
 #: src/gui/dialogs/unit_recall.cpp:266 src/gui/dialogs/unit_recall.cpp:271
 #: src/gui/dialogs/unit_recall.cpp:276
 msgid "Do you really want to dismiss him?"
-msgstr "Möchtet Ihr sie wirklich entlassen?"
+msgstr "Möchtet Ihr ihn wirklich entlassen?"
 
 #: src/gui/dialogs/unit_recall.cpp:267 src/gui/dialogs/unit_recall.cpp:272
 #: src/gui/dialogs/unit_recall.cpp:277
@@ -6404,16 +6400,19 @@ msgstr "an $receiver senden"
 
 #: src/gui/widgets/chatbox.cpp:387
 msgid "Room <i>“$name”</i> joined"
-msgstr "Raum <i>»$name«</i> betreten"
+msgstr "Raum <i>“$name”</i> betreten"
 
 #: src/gui/widgets/chatbox.cpp:393
+#, fuzzy
+#| msgid ""
+#| "Whisper session with <i>“$name”</i> started. If you do not want to "
+#| "receive messages from this user, type <i>/ignore $name</i>\n"
 msgid ""
 "Whisper session with <i>“$name”</i> started. If you do not want to receive "
 "messages from this user, type <i>/ignore $name</i>"
 msgstr ""
-"Private Nachrichtensitzung mit <i>$name</i> gestartet. Wenn Ihr von diesem "
-"Benutzer keine Nachrichten mehr erhalten wollt, führt den Befehl »/ignore "
-"$name« aus."
+"Private Nachrichtensitzung mit $name gestartet. Wenn Ihr von diesem Benutzer "
+"keine Nachrichten mehr erhalten wollt, führt den Befehl »/ignore $name« aus\n"
 
 #: src/gui/widgets/chatbox.cpp:626
 msgid "$player has entered the room"
@@ -6425,7 +6424,7 @@ msgstr "$player hat den Raum verlassen"
 
 #: src/gui/widgets/helper.cpp:96
 msgid "Mandatory widget '$id' hasn't been defined."
-msgstr "Benötigtes Steuerelement »$id« wurde nicht definiert."
+msgstr "Benötigtes Steuerelement ’$id’ wurde nicht definiert."
 
 #: src/gui/widgets/label.cpp:153
 msgid "Opening links is not supported, contact your packager"

@@ -67,7 +67,10 @@ if __name__ == "__main__":
 
     # Output.
     print("""
-<div class="tright"> __TOC__ </div>
+{| style="float:right"
+|
+__TOC__
+|}
 __NOEDITSECTION__
 In July 2003, '''David White''' released the first version of Wesnoth. Since
 then, many people have joined the project, contributing in very different ways.

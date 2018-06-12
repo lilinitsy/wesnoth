@@ -87,6 +87,9 @@ struct pump_impl
 {
 	std::vector<queued_event> events_queue;
 
+	/// The value returned by wml_tracking();
+	size_t internal_wml_tracking;
+
 	std::stringstream wml_messages_stream;
 
 	std::stack<context::state> contexts_;
@@ -97,6 +100,7 @@ struct pump_impl
 
 	pump_impl(manager& man)
 		: events_queue()
+		, internal_wml_tracking(0)
 		, wml_messages_stream()
 		, contexts_()
 		, instance_count(0)
@@ -294,6 +298,7 @@ void wml_event_pump::process_event(handler_ptr& handler_p, const queued_event& e
 	}
 
 	// The event hasn't been filtered out, so execute the handler.
+	++impl_->internal_wml_tracking;
 	context::scoped evc(impl_->contexts_);
 	assert(resources::lua_kernel != nullptr);
 	handler_p->handle_event(ev, *resources::lua_kernel);
@@ -542,6 +547,8 @@ pump_result_t wml_event_pump::operator()()
 		DBG_EH << "processing queued events: " << ss.str() << "\n";
 	}
 
+	const size_t old_wml_track = impl_->internal_wml_tracking;
+
 	// Ensure the whiteboard doesn't attempt to build its future unit map
 	// while events are being processed.
 	wb::real_map real_unit_map;
@@ -565,7 +572,12 @@ pump_result_t wml_event_pump::operator()()
 
 		{ // Block for context::scoped
 			context::scoped inner_evc(impl_->contexts_, false);
-			resources::lua_kernel->run_event(ev);
+			if(resources::lua_kernel->run_event(ev)) {
+				// TODO: since feeding was moved to lua we _always_ have a lua on_event handler so
+				//       lua_kernel->run_event always returns true. So maybe we should remove this
+				//       internal_wml_tracking thing (in particular the 'optimisation' in the movement code)?
+				++impl_->internal_wml_tracking;
+			}
 		}
 
 		assert(impl_->my_manager);
@@ -597,9 +609,11 @@ pump_result_t wml_event_pump::operator()()
 		flush_messages();
 	}
 
-	// Notify the whiteboard of any event.
-	// This is used to track when moves, recruits, etc. happen.
-	resources::whiteboard->on_gamestate_change();
+	if(old_wml_track != impl_->internal_wml_tracking) {
+		// Notify the whiteboard of any event.
+		// This is used to track when moves, recruits, etc. happen.
+		resources::whiteboard->on_gamestate_change();
+	}
 
 	return std::make_tuple(undo_disabled(), action_canceled());
 }
@@ -611,6 +625,26 @@ void wml_event_pump::flush_messages()
 		show_wml_errors();
 		show_wml_messages();
 	}
+}
+
+/**
+ * This function can be used to detect when no WML/Lua has been executed.
+ *
+ * If two calls to this function return the same value, then one can
+ * assume that the usual game mechanics have been followed, and code does
+ * not have to account for all the things WML/Lua can do. If the return
+ * values are different, then something unusual might have happened between
+ * those calls.
+ *
+ * This is not intended as a precise metric. Rather, it is motivated by
+ * how large the number of fired WML events is, compared to the (typical)
+ * number of WML event handlers. It is intended for code that can benefit
+ * from caching some aspect of the game state and that cannot rely on
+ * [allow_undo] not being used when that state changes.
+ */
+size_t wml_event_pump::wml_tracking()
+{
+	return impl_->internal_wml_tracking;
 }
 
 wml_event_pump::wml_event_pump(manager& man)

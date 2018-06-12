@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wesnoth 1.14\n"
 "Report-Msgid-Bugs-To: http://bugs.wesnoth.org/\n"
-"POT-Creation-Date: 2018-06-09 23:33+0300\n"
-"PO-Revision-Date: 2018-06-08 11:41+0200\n"
+"POT-Creation-Date: 2018-06-03 16:43+0300\n"
+"PO-Revision-Date: 2018-05-19 18:47+0200\n"
 "Last-Translator: Pepe <donpepe1963@gmail.com>\n"
 "Language-Team: Wesnoth Spanish translation\n"
 "Language: es\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #. [multiplayer_side]: id=Custom
 #: data/_main.cfg:22
@@ -4166,7 +4166,7 @@ msgstr "incurable"
 
 #. #-#-#-#-#  wesnoth.wml.pot (PACKAGE VERSION)  #-#-#-#-#
 #. [lua]: wesnoth.wml_actions.message
-#: data/lua/wml/message.lua:394 src/scripting/game_lua_kernel.cpp:2783
+#: data/lua/wml/message.lua:390 src/scripting/game_lua_kernel.cpp:2783
 #: src/scripting/game_lua_kernel.cpp:2818
 msgid "input"
 msgstr "entrada"
@@ -5291,8 +5291,10 @@ msgstr ""
 "unidades."
 
 #: src/actions/advancement.cpp:225
+#, fuzzy
+#| msgid "No advancement"
 msgid "an advancement choice"
-msgstr "una opción de promoción"
+msgstr "Ningún avance"
 
 #: src/actions/attack.cpp:386 src/actions/attack.cpp:656
 #: src/actions/attack.cpp:1412
@@ -5351,39 +5353,39 @@ msgstr "sanada"
 msgid "Ambushed!"
 msgstr "¡Emboscada!"
 
-#: src/actions/move.cpp:1130
+#: src/actions/move.cpp:1136
 msgid "Failed teleport! Exit not empty"
 msgstr "¡Falló el teletransporte! La salida no está vacía"
 
-#: src/actions/move.cpp:1146
+#: src/actions/move.cpp:1152
 msgid "Part of 'Units sighted! (...)' sentence^1 friendly"
 msgid_plural "$friends friendly"
 msgstr[0] "1 amiga"
 msgstr[1] "$friends amigas"
 
-#: src/actions/move.cpp:1147
+#: src/actions/move.cpp:1153
 msgid "Part of 'Units sighted! (...)' sentence^1 enemy"
 msgid_plural "$enemies enemy"
 msgstr[0] "1 enemiga"
 msgstr[1] "$enemies enemigas"
 
-#: src/actions/move.cpp:1148
+#: src/actions/move.cpp:1154
 msgid "Units sighted! ($friendphrase, $enemyphrase)"
 msgstr "¡Unidades divisadas! ($friendphrase, $enemyphrase)"
 
-#: src/actions/move.cpp:1152
+#: src/actions/move.cpp:1158
 msgid "Enemy unit sighted!"
 msgid_plural "$enemies enemy units sighted!"
 msgstr[0] "¡Unidad enemiga divisada!"
 msgstr[1] "¡$enemies unidades enemigas divisadas!"
 
-#: src/actions/move.cpp:1156
+#: src/actions/move.cpp:1162
 msgid "Friendly unit sighted"
 msgid_plural "$friends friendly units sighted"
 msgstr[0] "Unidad amiga divisada"
 msgstr[1] "$friends unidades amigas divisadas"
 
-#: src/actions/move.cpp:1171
+#: src/actions/move.cpp:1177
 msgid "(press $hotkey to keep moving)"
 msgstr "(presione $hotkey para seguir moviéndose)"
 
@@ -6093,19 +6095,19 @@ msgstr[1] ""
 "Por favor, informe sobre esto a los correspondientes autores o mantenedores "
 "de estos complementos."
 
-#: src/game_events/pump.cpp:476 src/game_launcher.cpp:911
+#: src/game_events/pump.cpp:481 src/game_launcher.cpp:911
 msgid "Error: "
 msgstr "Error: "
 
-#: src/game_events/pump.cpp:478
+#: src/game_events/pump.cpp:483
 msgid "Warning: "
 msgstr "Advertencia: "
 
-#: src/game_events/pump.cpp:480
+#: src/game_events/pump.cpp:485
 msgid "Debug: "
 msgstr "Depuración: "
 
-#: src/game_events/pump.cpp:482
+#: src/game_events/pump.cpp:487
 msgid "Info: "
 msgstr "Información: "
 
@@ -6225,8 +6227,10 @@ msgstr "Era desconocida"
 
 #: src/game_initialization/lobby_data.cpp:345
 #: src/game_initialization/lobby_data.cpp:375
+#, fuzzy
+#| msgid "scenario settings^Side"
 msgid "scenario_abbreviation^S"
-msgstr "E"
+msgstr "Bando"
 
 #: src/game_initialization/lobby_data.cpp:364
 msgid "Remote scenario"
@@ -6235,7 +6239,7 @@ msgstr "Escenario remoto"
 #: src/game_initialization/lobby_data.cpp:383
 #: src/game_initialization/lobby_data.cpp:406
 msgid "campaign_abbreviation^C"
-msgstr "C"
+msgstr ""
 
 #: src/game_initialization/lobby_data.cpp:411
 msgid "Unknown scenario"
@@ -7479,7 +7483,7 @@ msgstr ""
 "No puede mover a su líder fuera del torreón si tiene algunos reclutamientos "
 "o reincorporaciones planeadas."
 
-#: src/mouse_events.cpp:999
+#: src/mouse_events.cpp:994
 msgid "This unit has no usable weapons."
 msgstr "Esta unidad carece de armas utilizables."
 
