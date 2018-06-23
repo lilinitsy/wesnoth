@@ -340,6 +340,8 @@ bool play_controller::hotkey_handler::can_execute_command(const hotkey::hotkey_c
 	case hotkey::HOTKEY_BEST_ENEMY_MOVES:
 		return !linger() && play_controller_.enemies_visible();
 
+	case hotkey::HOTKEY_RELOAD_TURN:
+	case hotkey::HOTKEY_RELOAD_SCENARIO:
 	case hotkey::HOTKEY_LOAD_GAME:
 		return !play_controller_.is_networked_mp(); // Can only load games if not in a network game
 

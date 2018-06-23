@@ -99,6 +99,9 @@ std::array<hotkey_command_temp, HOTKEY_NULL - 1> master_hotkey_list {{
 	{ HOTKEY_SAVE_REPLAY, "savereplay", N_("Save Replay"), false, scope_game, HKCAT_SAVING, "" },
 	{ HOTKEY_SAVE_MAP, "savemap", N_("Save Map"), false, scope_game, HKCAT_SAVING, "" },
 	{ HOTKEY_LOAD_GAME, "load", N_("Load Game"), false, scope_game | scope_main, HKCAT_SAVING, "" },
+	{ HOTKEY_RELOAD_TURN, "reloadturn", N_("Reload Turn"), false, scope_game, HKCAT_SAVING, "" },
+	{ HOTKEY_RELOAD_SCENARIO, "reloadscenario", N_("Reload Scenario"), false, scope_game, HKCAT_SAVING, "" },
+
 	{ HOTKEY_RECRUIT, "recruit", N_("Recruit"), false, scope_game, HKCAT_UNITS, "" },
 	{ HOTKEY_REPEAT_RECRUIT, "repeatrecruit", N_("Repeat Recruit"), false, scope_game, HKCAT_UNITS, "" },
 	{ HOTKEY_RECALL, "recall", N_("Recall"), false, scope_game, HKCAT_UNITS, "" },
